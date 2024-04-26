@@ -1,0 +1,11 @@
+<h1>Post N°<%= @post.id %></h1>
+<br />
+<h3><%= @post.title %></h3>
+<p><%= @post.content %></p>
+<p>Written by user <i><%=@by.name%></i></p>
+<p>tags:</p>
+<ul>
+ <% @tagss.each do |t| %>
+    <li> <%= t.name %> </li>
+<% end %>
+</ul>

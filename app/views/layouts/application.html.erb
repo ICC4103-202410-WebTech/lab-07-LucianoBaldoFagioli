@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lab06</title>
+    <title><%=@vars%> Y</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/X_icon_2.svg/900px-X_icon_2.svg.png?20231002152819">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <style>
+      a:hover {
+        background-color: #e5e5e5;
+      }
+      #main-body {
+        min-height: 80vh;
+      }
+    </style>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4 border p-5">
+          <nav class="nav flex-column float-center p-5 position-fixed w-25">
+            <a class="nav-link rounded-5" href="/home"><h4>Home</h4></a>
+            <a class="nav-link rounded-5" href="/about"><h4>About</h4></a>
+            <a class="nav-link rounded-5" href="/contact"><h4>Contact</h4></a>
+            <a class="nav-link rounded-5" href="/posts"><h4>Posts</h4></a>
+            <button class="btn btn-primary rounded-5 mt-1"><h4>Post</h4></button>
+          </nav>
+        </div>
+        <div id="main-body" class="col border p-5">
+          <%= yield %>
+        </div>
+      </div>     
+      <footer class="container-fluid">
+        <div class="row">
+          <div class="col p-5">
+            &copy; 2024 Y - All rights reserved.
+          </div>
+          <div class="col p-5 d-flex gap-5">
+            <a>Facebook</a> <a>Instagram</a> <a>Youtube</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
